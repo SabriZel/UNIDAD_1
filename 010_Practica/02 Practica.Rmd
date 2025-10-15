@@ -1,0 +1,70 @@
+---
+title: "Basic Example"
+author: "Sabrina"
+date: "2025-10-01"
+output: 
+  github_document: default
+  html_document: default
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_format = "all") })
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Librerias
+
+```{r librerias}
+
+```
+
+# Letura de datos
+
+```{r datos_fuente}
+data_path <- file.path("C:/Users/sabri/OneDrive/Documentos/4TO_SEM/Estadistica_IV/Unidad_1/010_Practica")
+data_file <- file.path(data_path, "vgsales.csv")
+data.vg.raw <- read.csv(data_file,
+                 stringsAsFactors = F,na.strings = ".",header = T,sep=",")
+head(data.vg.raw)
+str(data.vg.raw)
+```
+
+# Transformación de los datos
+
+```{r}
+data.vg.raw$Year <- as.integer(data.vg.raw$Year)
+data.vg.raw$Genre <- as.factor(data.vg.raw$Genre)
+data.vg.raw$Platform <- as.factor(data.vg.raw$Platform)
+data.vg.raw$Publisher <- as.factor(data.vg.raw$Publisher)
+
+```
+
+```{r}
+summary(data.vg.raw)
+```
+
+```{r}
+length(unique(data.vg.raw$Name))
+```
+
+```{r}
+filter(data.vg.raw, Name=="FIFA 15")
+```
+
+```{r}
+duplicados <- data.vg.raw[duplicated(data.vg.raw$Name), ]
+duplicados
+```
+
+```{r}
+duplicated(data.vg.raw$Name)
+```
+
+```{r}
+duplicados <- data.vg.raw[duplicated(data.vg.raw$Name), ]
+duplicados
+```
