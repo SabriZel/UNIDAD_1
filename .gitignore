@@ -1,0 +1,44 @@
+# Archivos de historial de R
+.Rhistory
+.Rapp.history
+
+# Archivos de sesión de R
+.RData
+.RDataTmp
+
+# Archivos de proyecto de RStudio
+.Rproj.user/
+*.Rproj
+
+# Archivos producidos por R markdown
+*.utf8.md
+*.knit.md
+
+# Archivos de caché de knitr
+*_cache/
+/cache/
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de sistema de Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Archivos de sistema de macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archivos de sistema de Linux
+*~
+.directory
+.Trash-*
+
+# Archivos HTML generados por R Markdown
+*.html
+
+# Directorios de figuras generadas
+*_files/
